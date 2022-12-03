@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "xmao_ygra_mains",
+  "info": {
+    "singularName": "xmao-ygra-main",
+    "pluralName": "xmao-ygra-mains",
+    "displayName": "XMAO-Ygra-main",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "due": {
+      "type": "date"
+    },
+    "done": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "minor",
+        "regular",
+        "critical"
+      ],
+      "default": "regular",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
